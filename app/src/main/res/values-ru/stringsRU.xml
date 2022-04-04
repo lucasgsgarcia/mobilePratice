@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">мое приложение</string>
+    <string name="digite_a_tarefa">Введите задачу</string>
+    <string name="data">Дата</string>
+    <string name="duracao">Продолжительность</string>
+    <string name="adicionar">Добавлять</string>
+    <string name="remover">удалять</string>
+    <string name="filtrar">фильтр</string>
+</resources>

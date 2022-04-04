@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="digite_a_tarefa">Digite a tarefa</string>
+    <string name="data">Data</string>
+    <string name="duracao">Duração</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="remover">Remover</string>
+    <string name="filtrar">Filtrar</string>
 </resources>

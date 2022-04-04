@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity
     List<Integer> selecionados = new LinkedList<>();
     TarefaAdapter adapter;
     SimpleDateFormat dateFmt = new SimpleDateFormat("dd/MM/yyyy");
+    TarefaAdapter tad = null;
+    List<Tarefa> listaBackup = null;
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int pos, long id) {
@@ -61,6 +63,11 @@ public class MainActivity extends AppCompatActivity
             super(MainActivity.this, R.layout.item_lista_tarefa,
                     trfs);
             tasks = trfs;
+        }
+
+        public void atualizaListaFilter(List<Tarefa> listaFilter){
+            tasks.clear();
+            tasks.addAll(listaFilter);
         }
 
         @RequiresApi(api = Build.VERSION_CODES.M)
@@ -92,6 +99,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         if (savedInstanceState != null) {
             tarefas = (ArrayList<Tarefa>) savedInstanceState.getSerializable("tarefas");
         }
@@ -105,7 +113,8 @@ public class MainActivity extends AppCompatActivity
         edDuracao = (EditText) findViewById(R.id.edDuracao);
         edData = (EditText) findViewById(R.id.edQuando);
         lista = (ListView) findViewById(R.id.listaTarefas);
-        adapter = new TarefaAdapter(tarefas);
+        tad = new TarefaAdapter(tarefas);
+        adapter = tad;
         lista.setChoiceMode( ListView.CHOICE_MODE_MULTIPLE );
         lista.setAdapter( adapter );
         lista.setOnItemClickListener(this);
@@ -175,6 +184,8 @@ public class MainActivity extends AppCompatActivity
                         .filter(tarefa -> tarefa.getQuando().toString().contains(dataFilter.toString())).collect(Collectors.toList());
 
             System.out.println(adapter = new TarefaAdapter(listFiltrada));
+
+        tad.atualizaListaFilter(listFiltrada);
         adapter.notifyDataSetChanged();
 
         } catch (ParseException e) {

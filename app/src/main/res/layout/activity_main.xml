@@ -12,7 +12,7 @@
         android:id="@+id/edTarefa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Digite a tarefa" />
+        android:text="@string/digite_a_tarefa" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,13 +24,13 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:inputType="date"
-            android:text="Data" />
+            android:text="@string/data" />
         <EditText
             android:id="@+id/edDuracao"
             android:layout_weight="3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Duração" />
+            android:text="@string/duracao" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,14 +42,14 @@
             android:layout_weight="1"
             android:layout_margin="5sp"
             android:onClick="confirmar"
-            android:text="Adicionar" />
+            android:text="@string/adicionar" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
             android:layout_weight="1"
             android:onClick="remover"
-            android:text="Remover" />
+            android:text="@string/remover" />
     </LinearLayout>
 
     <EditText
@@ -63,7 +63,7 @@
         android:onClick="filtrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Filtrar" />
+        android:text="@string/filtrar" />
 
     <ListView
         android:id="@+id/listaTarefas"
